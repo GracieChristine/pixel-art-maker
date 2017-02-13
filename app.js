@@ -29,20 +29,21 @@
   	colorSpan.style.MozTransform = "rotate(" + i + "deg)";
   	colorSpan.style.OTransform = "rotate(" + i + "deg)";
   	colorSpan.style.transform = "rotate(" + i + "deg)";
+  	let userChoice = (i + "deg");
     colorwheel.appendChild(colorSpan);
   }
-
-//Create Inputs
-  let inputText = document.createElement("input");
-  inputText.setAttribute("type", "output");
-  inputText.setAttribute("id", "text");
-  inputText.setAttribute("value", "#comingSoon...");
-  colorwheel.appendChild(inputText);
 
 //Create Brush Color Indicator
   let indicator = document.createElement("div");
   indicator.setAttribute("class", "indicator");
   colorwheel.appendChild(indicator);
+
+  //Create Inputs
+  let inputText = document.createElement("input");
+  inputText.setAttribute("type", "output");
+  inputText.setAttribute("id", "text");
+  inputText.setAttribute("value", "ComingSoon....");
+  colorwheel.appendChild(inputText);
 
 //Add Palette Color to Pixels
   palette.addEventListener("click", function() {
@@ -52,6 +53,7 @@
 
     indicator.setAttribute("id", activateColor1 );
     indicator.style.backgroundColor = pickColor1;
+    // inputText.setAttribute("value", pickColor1);
 
     //Clicking Situation
     canvas.addEventListener("click", function() {
@@ -76,6 +78,7 @@
 
     indicator.setAttribute("style", activateColor2);
     indicator.style.backgroundColor = pickColor2;
+    document.getElementById("text").setAttribute("value", pickColor2);
 
     //Clicking Situation
     canvas.addEventListener("click", function() {
